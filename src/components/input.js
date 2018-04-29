@@ -18,12 +18,18 @@ class Input extends Component {
         console.log(this.state.task);
         
   }
+  refreshInput = (event) =>{
+        this.setState({
+            task:""
+        })
+  }
+
   render() {
     return (
         <form>
             <span>Task: </span>
             <input type="text" name="task" onChange={this.onEventChange} value={this.state.task}/>
-            <button onClick={(event)=>{this.props.submit(event,this.state.task)}}>Submit</button>
+            <button onClick={(event)=>{this.props.submit(event,this.state.task);this.refreshInput()}}>Submit</button>
         </form>
     );
   }
