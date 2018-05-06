@@ -2,12 +2,20 @@ import React, { Component } from 'react';
 
 
 class Contact extends Component {
+  constructor(props)
+  {
+      super(props);
+  }
   render() {
     return (
-        <form>
-            <span>Task: </span>
-            <input type="text" name="task"/>
-        </form>
+        <div>
+          <button onClick={()=>{
+              this.props.history.push({
+                pathname:'/about',
+                state:{'name':'tabish','age':'age'}
+              })
+            }}>Go to Function</button>
+        </div>
     );
   }
 }

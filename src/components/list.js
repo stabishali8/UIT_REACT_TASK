@@ -6,7 +6,7 @@ class List extends Component {
   render() {
       let print = this.props.task.map((currentTask)=>{
           return <div>
-              {currentTask}
+              {currentTask}&nbsp;<button>Update</button>&nbsp;<button onClick={()=>{this.props.delete(currentTask)}}>Delete</button>
           </div>
       })
     return (

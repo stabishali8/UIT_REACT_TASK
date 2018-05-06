@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 
 
 class About extends Component {
+  constructor(props)
+  {
+    super(props);
+  }
   render() {
     return (
-        <form>
-            <span>Task: </span>
-            <input type="text" name="task"/>
-        </form>
+      <div>
+        {console.log(this.props.location)}
+        {this.props.location.state && <p>{JSON.stringify(this.props.location.state)}</p>}
+        
+        <p>adada</p>
+      </div>
     );
   }
 }

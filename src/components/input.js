@@ -6,7 +6,8 @@ class Input extends Component {
     {
         super(props);
         this.state = {
-            task: ""
+            task: "",
+            submitButton:"Submit"
         }
     }
 
@@ -29,7 +30,7 @@ class Input extends Component {
         <form>
             <span>Task: </span>
             <input type="text" name="task" onChange={this.onEventChange} value={this.state.task}/>
-            <button onClick={(event)=>{this.props.submit(event,this.state.task);this.refreshInput()}}>Submit</button>
+            <button onClick={(event)=>{this.props.submit(event,this.state.task);this.refreshInput()}}>{this.state.submitButton}</button>
         </form>
     );
   }

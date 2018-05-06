@@ -10,13 +10,17 @@ class App extends Component {
   {
     super(props);
     this.state = {
-      task : []
+      task : [],
+      demo:[
+        {
+        }
+      ]
     }
   }
 
   onSubmit = (event,input) =>{
         event.preventDefault();
-        const task1 = [...this.state.task];
+        let task1 = [...this.state.task];
         task1.push(input);
         this.setState({
           task:task1
@@ -25,7 +29,15 @@ class App extends Component {
 
         })
   }
-
+ onDelete = (deleteTask) =>{
+   let task1 = [...this.state.task];
+   task1 = task1.filter((item) =>{
+        return deleteTask!=item;
+   })
+   this.setState({
+     task:task1
+   })
+ }
 
 
   render() {
@@ -39,7 +51,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Input submit={this.onSubmit}/>
-        <List task={this.state.task}/>
+        <List task={this.state.task}delete={this.onDelete}/>
       </div>
     );
   }
